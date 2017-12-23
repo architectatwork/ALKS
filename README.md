@@ -2,8 +2,8 @@
 
 ##Summary: 
 
-Filling the gap for key services between what Amazon provides and the need for system admins/users to create manage temporary tokens to access AWS resources.
-The purpose of the tool is to automate generation of federated tokens on demand. It makes it easy for system admin's to manage, create and track issuance of these tokens. User validation is performed against LDAP and the application checks if user belongs to any of the LDAP groups before displaying respective options to generate keys.
+This tool fills the gap for temporary key services between what Amazon provides and the need for organizations where system admins/users need to create and manage temporary tokens to access AWS resources.
+The purpose of the tool is to automate and provide a selfservice to generate federated tokens on demand. This tool will help to manage, create and track the issuance of these tokens. User validation is performed by leverating corporate AD so no user data is stored and it is easy manage access from centralized system. 
 
 ##Features
 
@@ -23,6 +23,8 @@ The purpose of the tool is to automate generation of federated tokens on demand.
 
 ###Security
 *	Critical account data is encrypted in DynamoDB using client side encryption
+*	Enable SSL (Additional security outside of application)
+*	Track logging using Splunk or ELK (Additional security outside of application)
 
 ###Design Constraints
 AWS SDK has a constrained policy length (2048 bytes) to generate tokens. Refer topic "Policy limitation Work around" below.
